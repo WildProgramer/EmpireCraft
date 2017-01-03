@@ -4,15 +4,21 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { TemplateComponent } from './template/template.component';
+
+//Materialize Library
+import { MaterializeModule } from 'angular2-materialize';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TemplateComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    MaterializeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
