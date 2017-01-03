@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {EnglishEn} from "../languages/eng-en";
 
 @Component({
   selector: 'app-template',
@@ -7,9 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateComponent implements OnInit {
 
-  constructor() { }
+
+  private title:string;
+  private navBar;
+
+
+
+ englishSelected(){
+
+  this.title = EnglishEn.title;
+  this.navBar = EnglishEn.navBar;
+}
+
+
+  constructor() {
+
+    this.englishSelected();
+
+  }
 
   ngOnInit() {
+
   }
+
+
+
 
 }

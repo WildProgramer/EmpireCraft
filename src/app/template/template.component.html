@@ -1,18 +1,24 @@
 <div class="content">
 
-<div class="navbarCustom navbar-fixed">
-<nav>
-  <div class="nav-wrapper grey darken-4 ">
-    <a href="#" class="brand-logo light-green-text text-accent-1">EmpireCraft</a>
-    <ul class="right hide-on-med-and-down">
-      <li><a href="#" class="waves-effect waves-light light-green-text text-accent-1">Home</a></li>
-      <li><a href="#" class="waves-effect waves-light light-green-text text-accent-1">Leaderboards</a></li>
-      <li><a href="#" class="waves-effect waves-light light-green-text text-accent-1">Forums</a></li>
-      <li><a href="#" class="waves-effect waves-light light-green-text text-accent-1">Support</a></li>
-      <li><a href="#" class="waves-effect waves-light light-green-text text-accent-1">E Store</a></li>
+  <div class="navbarCustom navbar-fixed">
+    <nav>
+      <div class="nav-wrapper grey darken-4 ">
+        <a href="#" class="brand-logo light-green-text text-accent-1">{{title}}</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a [routerLink]="['home']" class="waves-effect waves-light light-green-text text-accent-1">{{navBar.home}}</a></li>
+          <li><a [routerLink]="['leaderboards']" class="waves-effect waves-light light-green-text text-accent-1">{{navBar.leaderboards}}</a>
+          </li>
+          <li><a [routerLink]="['forums']" class="waves-effect waves-light light-green-text text-accent-1">{{navBar.forums}}</a></li>
+          <li><a [routerLink]="['support']" class="waves-effect waves-light light-green-text text-accent-1">{{navBar.support}}</a></li>
+          <li><a [routerLink]="['e-store']" class="waves-effect waves-light light-green-text text-accent-1">{{navBar.eStore}}</a></li>
 
-    </ul>
+        </ul>
+      </div>
+    </nav>
   </div>
-</nav>
-</div>
+
+  <div class="container">
+      <router-outlet></router-outlet>
+
+  </div>
 </div>
