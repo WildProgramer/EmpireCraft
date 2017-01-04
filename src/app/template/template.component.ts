@@ -1,6 +1,7 @@
-import {Component, OnInit, HostListener, NgZone} from '@angular/core';
+import {Component, OnInit, ElementRef} from '@angular/core';
 import {EnglishEn} from "../languages/eng-en";
 import {TemplateController} from "./template.controller";
+declare var jQuery: any;
 
 @Component({
   selector: 'app-template',
@@ -12,26 +13,11 @@ export class TemplateComponent implements OnInit {
 
   private title:string;
   private navBar;
-  private hideElement: boolean = true;
-  private width: number;
+
 
   controller = new TemplateController();
 
 
-  // @HostListener('window:resize', ['$event'])
-  //   onResize(event)
-  //   {
-  //     this.innerWidth = event.target.innerWidth;
-  //     if (this.innerWidth <= 992) {
-  //
-  //       console.log("E menor");
-  //     } else {
-  //
-  //       console.log("E maior");
-  //
-  //     }
-  //
-  //   }
 
 
 
@@ -46,31 +32,11 @@ export class TemplateComponent implements OnInit {
 
 
 
-  constructor(ngZone:NgZone) {
+  constructor(private _elRef: ElementRef) {
 
 
 
 
-//   Changing navbar with the size
-    window.onresize = (e) =>
-    {
-      console.log("here called");
-      ngZone.run(() => {
-        this.width = window.innerWidth;
-
-        if(this.width <= 992){
-
-          this.hideElement = false;
-
-        }else{
-
-          this.hideElement = true;
-
-
-
-        }
-      });
-    };
 
 
 
@@ -81,8 +47,10 @@ export class TemplateComponent implements OnInit {
   }
 
 
-  ngOnInit() {
-
+  ngOnInit(): any {
+    jQuery(this._elRef.nativeElement).ready(function () {
+      jQuery(".button-collapse").sideNav();
+    })
 
   }
 

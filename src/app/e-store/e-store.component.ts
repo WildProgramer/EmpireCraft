@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ElementRef} from '@angular/core';
+declare var jQuery: any;
 
 @Component({
   selector: 'app-e-store',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EStoreComponent implements OnInit {
 
-  constructor() { }
+  constructor( private _elRef: ElementRef) { }
 
-  ngOnInit() {
+  ngOnInit(): any {
+    jQuery(this._elRef.nativeElement).ready(function () {
+      jQuery('.modal').modal();
+    })
+
   }
 
 }

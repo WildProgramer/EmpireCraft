@@ -3,7 +3,8 @@
   <div class="navbarCustom navbar-fixed" >
     <nav>
       <div class="nav-wrapper grey darken-4 " >
-        <a href="#" class="brand-logo light-green-text text-accent-1">{{title}}</a>
+        <a class="brand-logo light-green-text text-accent-1">{{title}}</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li><a [routerLink]="['home']" class="waves-effect waves-light light-green-text text-accent-1">{{navBar.home}}</a></li>
           <li><a [routerLink]="['leaderboards']" class="waves-effect waves-light light-green-text text-accent-1">{{navBar.leaderboards}}</a>
@@ -13,13 +14,23 @@
           <li><a [routerLink]="['e-store']" class="waves-effect waves-light light-green-text text-accent-1">{{navBar.eStore}}</a></li>
 
         </ul>
+
       </div>
+
     </nav>
   </div>
+  <ul class="side-nav" id="mobile-demo" >
+    <li><a [routerLink]="['home']" class="waves-effect waves-green">{{navBar.home}}</a></li>
+    <li><a [routerLink]="['leaderboards']" class="waves-effect waves-green">{{navBar.leaderboards}}</a>
+    </li>
+    <li><a [routerLink]="['forums']" class="waves-effect waves-green">{{navBar.forums}}</a></li>
+    <li><a [routerLink]="['support']" class="waves-effect waves-green">{{navBar.support}}</a></li>
+    <li><a [routerLink]="['e-store']" class="waves-effect waves-green">{{navBar.eStore}}</a></li>
+  </ul>
 
   <div class="container">
 
-    <div [hidden]="hideElement" ><h1>Hello from the test</h1></div>
+
       <router-outlet></router-outlet>
 
   </div>
