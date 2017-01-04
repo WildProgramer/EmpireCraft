@@ -1,8 +1,8 @@
-<div class="content">
+<div  class="content" >
 
-  <div class="navbarCustom navbar-fixed">
+  <div class="navbarCustom navbar-fixed" >
     <nav>
-      <div class="nav-wrapper grey darken-4 ">
+      <div class="nav-wrapper grey darken-4 " >
         <a href="#" class="brand-logo light-green-text text-accent-1">{{title}}</a>
         <ul class="right hide-on-med-and-down">
           <li><a [routerLink]="['home']" class="waves-effect waves-light light-green-text text-accent-1">{{navBar.home}}</a></li>
@@ -18,6 +18,8 @@
   </div>
 
   <div class="container">
+
+    <div [hidden]="hideElement" ><h1>Hello from the test</h1></div>
       <router-outlet></router-outlet>
 
   </div>
